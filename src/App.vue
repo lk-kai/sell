@@ -1,19 +1,35 @@
 <template>
   <div id="app">
-    <!-- <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div> -->
-    <router-view/>
+    <v-header></v-header>
+    <div class="tab">
+      <div class="tab-item">商品</div>
+      <div class="tab-item">评论</div>
+      <div class="tab-item">商家</div>
+    </div>
+    <div class="content">
+      I am content
+    </div>
   </div>
 </template>
-
+<script>
+import header from './components/header/header.vue'
+export default {
+  components: {
+    'v-header': header
+  }
+}
+</script>
 <style lang="stylus">
-#app
-  font-family 'Avenir', Helvetica, Arial, sans-serif
-  -webkit-font-smoothing antialiased
-  -moz-osx-font-smoothing grayscale
-  text-align center
-  color #2c3e50
-  margin-top 60px
+  *
+    margin 0
+    padding 0
+    #app
+      .tab
+        display flex
+        height 40px
+        line-height 40px
+        width 100%
+        .tab-item
+          flex 1
+          text-align center
 </style>
