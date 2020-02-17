@@ -77,7 +77,6 @@ export default {
   .header
     position relative
     color #ffffff
-    // background #999
     overflow hidden
     background rgba(7, 17, 27, 0.5)
     .content-wrapper
@@ -92,7 +91,6 @@ export default {
       .content
         display inline-block
         margin-left 16px
-        // font-size 14px
         .title
           margin 2px 0 8px 0
           .brand
