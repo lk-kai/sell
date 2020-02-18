@@ -82,6 +82,7 @@ export default {
     .content-wrapper
       position relative
       padding 24px 12px 18px 24px
+      // 去掉图片文字间的间隔
       font-size 0
       .avatar
         display inline-block
