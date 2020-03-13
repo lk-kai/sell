@@ -93,7 +93,7 @@ export default {
     }
   },
   methods: {
-    showDetail() {
+    showDetailsdf() {
       this.detailShow = true
     }
   }
