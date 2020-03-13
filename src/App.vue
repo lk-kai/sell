@@ -19,13 +19,13 @@
 import header from './components/header/header.vue'
 const ERR_OK = 0
 export default {
-  data () {
+  data() {
     return {
       seller: {}
     }
   },
-  created () {
-    this.$http.get('/api/seller').then((res) => {
+  created() {
+    this.$http.get('/api/seller').then(res => {
       res = res.body
       if (res.code === ERR_OK) {
         this.seller = res.data
@@ -38,28 +38,39 @@ export default {
 }
 </script>
 <style lang="stylus">
-  @import "./common/stylus/mixin.styl"
-  *
-    margin 0
-    padding 0
-    #app
-      .tab
-        display flex
-        width 100%
-        height 40px
-        line-height 40px
-        // 测试vscode提交代码
-        // border-bottom 1px solid rgba(7,17,27,0.1)
-        // 测试
-        border-1px(rgba(7,17,27,0.1))
-        .tab-item
-          flex 1
-          text-align center
-          &>a
-            display block
-            text-decoration none
-            font-size 14px
-            color rgb(77,85,93)
-            &.is-active
-              color rgb(240,20,20)
+@import './common/stylus/mixin.styl';
+
+* {
+  margin: 0;
+  padding: 0;
+
+  #app {
+    .tab {
+      display: flex;
+      width: 100%;
+      height: 40px;
+      line-height: 40px;
+      // 测试vscode提交代码
+      // border-bottom 1px solid rgba(7,17,27,0.1)
+      // 测试
+      border-1px(rgba(7, 17, 27, 0.1));
+
+      .tab-item {
+        flex: 1;
+        text-align: center;
+
+        &>a {
+          display: block;
+          text-decoration: none;
+          font-size: 14px;
+          color: rgb(77, 85, 93);
+
+          &.is-active {
+            color: rgb(240, 20, 20);
+          }
+        }
+      }
+    }
+  }
+}
 </style>
