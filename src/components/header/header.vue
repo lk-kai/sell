@@ -93,6 +93,7 @@ export default {
     }
   },
   methods: {
+    // 是否显示详情信息
     showDetail() {
       this.detailShow = true
     }
