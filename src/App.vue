@@ -25,6 +25,7 @@ export default {
     }
   },
   created() {
+  // 添加一行注释
     this.$http.get('/api/seller').then(res => {
       res = res.body
       if (res.code === ERR_OK) {
