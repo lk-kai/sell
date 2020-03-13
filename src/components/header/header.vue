@@ -79,7 +79,6 @@ export default {
     }
   },
   created() {
-    // 添加一行注释
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
     setTimeout(() => {
       console.log(this.seller)
@@ -94,7 +93,6 @@ export default {
     }
   },
   methods: {
-    // 是否显示详情信息
     showDetail() {
       this.detailShow = true
     }
