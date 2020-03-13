@@ -93,7 +93,7 @@ export default {
     }
   },
   methods: {
-    showDetail() {
+    showDetailzzzzzzzz() {
       this.detailShow = true
     }
   }
