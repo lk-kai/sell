@@ -79,6 +79,7 @@ export default {
     }
   },
   created() {
+    // 添加一行注释
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
     setTimeout(() => {
       console.log(this.seller)
