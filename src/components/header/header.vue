@@ -93,11 +93,7 @@ export default {
     }
   },
   methods: {
-<<<<<<< HEAD
     showDetailzzzzzzzz() {
-=======
-    showDetailsdf() {
->>>>>>> 0bd15d103c93eb0a4fb204bb6c8a06b4b1b59ff9
       this.detailShow = true
     }
   }
