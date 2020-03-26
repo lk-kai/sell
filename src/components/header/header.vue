@@ -100,200 +100,141 @@ export default {
 }
 </script>
 <style lang="stylus">
-@import '../../common/stylus/mixin';
-
-.header {
-  position: relative;
-  color: #ffffff;
-  overflow: hidden;
-  background: rgba(7, 17, 27, 0.5);
-
-  .content-wrapper {
-    position: relative;
-    padding: 24px 12px 18px 24px;
+@import '../../common/stylus/mixin'
+.header
+  position: relative
+  color: #ffffff
+  overflow: hidden
+  background: rgba(7, 17, 27, 0.5)
+  .content-wrapper
+    position: relative
+    padding: 24px 12px 18px 24px
     // 去掉图片文字间的间隔
-    font-size: 0;
-
-    .avatar {
-      display: inline-block;
-      vertical-align: top;
-
-      img {
-        border-radius: 2px;
-      }
-    }
-
-    .content {
-      display: inline-block;
-      margin-left: 16px;
-
-      .title {
-        margin: 2px 0 8px 0;
-
-        .brand {
-          display: inline-block;
-          vertical-align: top;
-          width: 30px;
-          height: 18px;
-          bg-image('brand');
-          background-size: 30px 18px;
-          background-repeat: no-repeat;
-        }
-
-        .name {
-          margin-left: 6px;
-          font-size: 16px;
-          line-height: 18px;
-          font-weight: bold;
-        }
-      }
-
-      .description {
-        margin-bottom: 10px;
-        line-height: 12px;
-        font-size: 12px;
-      }
-
-      .support {
-        .icon {
-          display: inline-block;
-          vertical-align: top;
-          width: 12px;
-          height: 12px;
-          margin-right: 4px;
-          background-size: 12px 12px;
-          background-repeat: no-repeat;
-
-          &.decrease {
-            bg-image('decrease_1');
-          }
-
-          &.discount {
-            bg-image('discount_1');
-          }
-
-          &.guarantee {
-            bg-image('guarantee_1');
-          }
-
-          &.special {
-            bg-image('special_1');
-          }
-
-          &.invoice {
-            bg-image('invoice_1');
-          }
-        }
-
-        .text {
-          font-size: 10px;
-          line-height: 12px;
-        }
-      }
-    }
-
-    .support-count {
-      position: absolute;
-      right: 12px;
-      bottom: 14px;
-      padding: 0 8px;
-      height: 24px;
-      line-height: 24px;
-      border-radius: 14px;
-      background: rgba(0, 0, 0, 0.2);
-      text-align: center;
-
-      .count {
-        font-size: 10px;
-        vertical-align: top;
-      }
-
-      .icon-keyboard_arrow_right {
-        margin-left: 2px;
-        line-height: 24px;
-        font-size: 10px;
-      }
-    }
-  }
-
-  .bulletin-wrapper {
-    position: relative;
-    height: 28px;
-    line-height: 28px;
-    padding: 0 22px 0 12px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    background: rgba(7, 17, 27, 0.2);
-
-    .bulletin-title {
-      display: inline-block;
-      vertical-align: top;
-      margin-top: 8px;
-      width: 22px;
-      height: 12px;
-      bg-image('bulletin');
-      background-size: 22px 12px;
-      background-repeat: no-repeat;
-    }
-
-    .bulletin-text {
-      vertical-align: top;
-      margin: 0 4px;
-      font-size: 10px;
-    }
-
-    .icon-keyboard_arrow_right {
-      position: absolute;
-      font-size: 10px;
-      right: 12px;
-      top: 8px;
-    }
-  }
-
-  .background {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    filter: blur(10px);
-  }
-
-  .detail {
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background: rgba(7, 17, 27, 0.8);
-
-    .detail-wrapper {
-      min-height: 100%;
-      width: 100%;
-
-      .detail-main {
-        margin-top: 64px;
-        padding-bottom: 64px;
-
-        .name {
-          line-height: 16px;
-          text-align: center;
-          font-size: 16px;
-        }
-      }
-    }
-
-    .detail-close {
-      position: relative;
-      width: 32px;
-      height: 32px;
-      margin: -64px auto 0 auto;
-      clear: both;
-    }
-  }
-}
+    font-size: 0
+    .avatar
+      display: inline-block
+      vertical-align: top
+      img
+        border-radius: 2px
+    .content
+      display: inline-block
+      margin-left: 16px
+      .title
+        margin: 2px 0 8px 0
+        .brand
+          display: inline-block
+          vertical-align: top
+          width: 30px
+          height: 18px
+          bg-image('brand')
+          background-size: 30px 18px
+          background-repeat: no-repeat
+        .name
+          margin-left: 6px
+          font-size: 16px
+          line-height: 18px
+          font-weight: bold
+      .description
+        margin-bottom: 10px
+        line-height: 12px
+        font-size: 12px
+      .support
+        .icon
+          display: inline-block
+          vertical-align: top
+          width: 12px
+          height: 12px
+          margin-right: 4px
+          background-size: 12px 12px
+          background-repeat: no-repeat
+          &.decrease
+            bg-image('decrease_1')
+          &.discount
+            bg-image('discount_1')
+          &.guarantee
+            bg-image('guarantee_1')
+          &.special
+            bg-image('special_1')
+          &.invoice
+            bg-image('invoice_1')
+        .text
+          font-size: 10px
+          line-height: 12px
+    .support-count
+      position: absolute
+      right: 12px
+      bottom: 14px
+      padding: 0 8px
+      height: 24px
+      line-height: 24px
+      border-radius: 14px
+      background: rgba(0, 0, 0, 0.2)
+      text-align: center
+      .count
+        font-size: 10px
+        vertical-align: top
+      .icon-keyboard_arrow_right
+        margin-left: 2px
+        line-height: 24px
+        font-size: 10px
+  .bulletin-wrapper
+    position: relative
+    height: 28px
+    line-height: 28px
+    padding: 0 22px 0 12px
+    white-space: nowrap
+    overflow: hidden
+    text-overflow: ellipsis
+    background: rgba(7, 17, 27, 0.2)
+    .bulletin-title
+      display: inline-block
+      vertical-align: top
+      margin-top: 8px
+      width: 22px
+      height: 12px
+      bg-image('bulletin')
+      background-size: 22px 12px
+      background-repeat: no-repeat
+    .bulletin-text
+      vertical-align: top
+      margin: 0 4px
+      font-size: 10px
+    .icon-keyboard_arrow_right
+      position: absolute
+      font-size: 10px
+      right: 12px
+      top: 8px
+  .background
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: -1
+    filter: blur(10px)
+  .detail
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 100
+    width: 100%
+    height: 100%
+    overflow: auto
+    background: rgba(7, 17, 27, 0.8)
+    .detail-wrapper
+      min-height: 100%
+      width: 100%
+      .detail-main
+        margin-top: 64px
+        padding-bottom: 64px
+        .name
+          line-height: 16px
+          text-align: center
+          font-size: 16px
+    .detail-close
+      position: relative
+      width: 32px
+      height: 32px
+      margin: -64px auto 0 auto
+      clear: both
 </style>

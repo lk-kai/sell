@@ -45,6 +45,9 @@ export default {
   padding: 0;
 
   #app {
+    width: 100%;
+    height: 100%;
+
     .tab {
       display: flex;
       width: 100%;
