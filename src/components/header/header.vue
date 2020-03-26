@@ -63,7 +63,10 @@
           ></star>
         </div>
       </div>
-      <div class="detail-close">
+      <div
+        @click="closeDetail"
+        class="detail-close"
+      >
         <i class="icon-close"></i>
       </div>
     </div>
@@ -95,6 +98,9 @@ export default {
   methods: {
     showDetail() {
       this.detailShow = true
+    },
+    closeDetail() {
+      this.detailShow = false
     }
   }
 }
