@@ -1,6 +1,6 @@
 <template>
   <div>
-    我是ratings
+    这是ratings
   </div>
 </template>
 
