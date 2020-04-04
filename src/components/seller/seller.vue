@@ -1,6 +1,6 @@
 <template>
   <div>
-    我是seller
+    这是seller
   </div>
 </template>
 
