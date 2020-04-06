@@ -22,9 +22,6 @@ module.exports = {
         }
       }
     },
-
-    host: '127.0.0.1',
-    port: 8900,
     before: function (app) {
       // 可请求   api/data
       app.get('/api/seller', function (req, res) {
