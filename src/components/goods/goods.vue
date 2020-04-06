@@ -20,7 +20,7 @@ export default {}
   .left {
     flex: 0 0 80px;
     width: 80px;
-    background-color: red;
+    background-color: #fff;
   }
 
   .right {

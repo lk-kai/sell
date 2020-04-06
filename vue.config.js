@@ -11,6 +11,20 @@ app.use('/api', apiRoutes)
 module.exports = {
   // baseUrl:
   devServer: {
+
+    proxy: {
+      // proxy all requests starting with /api to jsonplaceholder
+      '/api': {
+        target: 'http://ustbhuangyi.com/sell',
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': ''
+        }
+      }
+    },
+
+    host: '127.0.0.1',
+    port: 8900,
     before: function (app) {
       // 可请求   api/data
       app.get('/api/seller', function (req, res) {

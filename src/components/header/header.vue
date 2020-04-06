@@ -1,7 +1,10 @@
 <template>
   <div class="header">
     <div class="content-wrapper">
-      <div class="avatar">
+      <div
+        class="avatar"
+        v-if="seller.avatar"
+      >
         <img
           :src="seller.avatar"
           height="64"
@@ -83,9 +86,6 @@ export default {
   },
   created() {
     this.classMap = ['decrease', 'discount', 'special', 'invoice', 'guarantee']
-    setTimeout(() => {
-      console.log(this.seller)
-    }, 20)
   },
   components: {
     star

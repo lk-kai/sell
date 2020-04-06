@@ -7,6 +7,7 @@ import VueResource from 'vue-resource'
 import './common/stylus/index.styl'
 Vue.config.productionTip = false
 Vue.use(VueResource)
+Vue.prototype.host = '/api'
 new Vue({
   router,
   store,
