@@ -34,7 +34,7 @@
             <li
               :key="food.name"
               class="food-item"
-              v-for="food in good.foods"
+              v-for="(food) in good.foods"
             >
               <div class="icon">
                 <img
@@ -57,18 +57,25 @@
                     v-show="food.oldPrice"
                   >￥{{food.oldPrice}}</span>
                 </div>
-                <div class="cart-control-wrapper"></div>
+                <div class="cart-control-wrapper">
+                  <cartcontrol :food="food"></cartcontrol>
+                </div>
               </div>
             </li>
           </ul>
         </cube-scroll-nav-panel>
       </cube-scroll-nav>
     </div>
+    <div class="shop-cart-wrapper">
+      <shopcar></shopcar>
+    </div>
   </div>
 </template>
 
 <script>
 import { getGoods } from '../../api/index'
+import shopcar from '../shop-car/shop-car'
+import cartcontrol from '../cart-control/cart-control'
 export default {
   data() {
     return {
@@ -78,6 +85,10 @@ export default {
         directionLockThreshold: 0
       }
     }
+  },
+  components: {
+    shopcar,
+    cartcontrol
   },
   created() {
     this._Getgoods()

@@ -1,6 +1,9 @@
 <template>
   <div class="header">
-    <div class="content-wrapper">
+    <div
+      @click="showDetail"
+      class="content-wrapper"
+    >
       <div
         class="avatar"
         v-if="seller.avatar"
@@ -29,7 +32,6 @@
         </div>
       </div>
       <div
-        @click="showDetail"
         class="support-count"
         v-if="seller.supports"
       >
@@ -37,10 +39,7 @@
         <i class="icon-keyboard_arrow_right"></i>
       </div>
     </div>
-    <div
-      @click="showDetail"
-      class="bulletin-wrapper"
-    >
+    <div class="bulletin-wrapper">
       <span class="bulletin-title"></span>
       <span class="bulletin-text">{{seller.bulletin}}</span>
       <i class="icon-keyboard_arrow_right"></i>
