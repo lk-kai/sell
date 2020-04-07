@@ -45,7 +45,7 @@ export default {
   }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
 @import '../../common/stylus/mixin'
   .star
     font-size 0

@@ -1,23 +1,15 @@
 <template>
   <div id="app">
     <v-header :seller="seller"></v-header>
-    <div class="tab border-1px">
-      <div class="tab-item">
-        <router-link to="goods">商品</router-link>
-      </div>
-      <div class="tab-item">
-        <router-link to="ratings">评论</router-link>
-      </div>
-      <div class="tab-item">
-        <router-link to="seller">商家</router-link>
-      </div>
+    <div class="tab-wrapper">
+      <tab></tab>
     </div>
-    <router-view></router-view>
   </div>
 </template>
 <script>
 import { getSeller } from './api/index'
 import header from './components/header/header.vue'
+import tab from './components/tab/tab'
 // const ERR_OK = 0
 export default {
   data() {
@@ -31,11 +23,12 @@ export default {
     })
   },
   components: {
-    'v-header': header
+    'v-header': header,
+    tab
   }
 }
 </script>
-<style lang="stylus">
+<style lang="stylus" scoped>
 @import './common/stylus/mixin.styl'
 *
   margin: 0
@@ -43,23 +36,10 @@ export default {
   #app
     width: 100%
     height: 100%
-    .tab
-      display: flex
-      width: 100%
-      height: 40px
-      line-height: 40px
-      // 测试vscode提交代码
-      // border-bottom 1px solid rgba(7,17,27,0.1)
-      // 测试
-      border-1px(rgba(7, 17, 27, 0.1))
-      .tab-item
-        flex: 1
-        text-align: center
-        &>a
-          display: block
-          text-decoration: none
-          font-size: 14px
-          color: rgb(77, 85, 93)
-          &.is-active
-            color: rgb(240, 20, 20)
+    .tab-wrapper
+      position: fixed
+      top: 134px
+      left: 0
+      bottom: 0
+      right: 0
 </style>

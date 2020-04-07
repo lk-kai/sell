@@ -11,7 +11,7 @@
     "@vue/cli-service-global": "^4.1.2",
     "axios": "^0.19.2",
     "core-js": "^3.4.4",
-    "cube-ui": "~1.12.15",
+    "cube-ui": "^1.12.36",
     "ts-axios-new": "^0.1.5",
     "vue": "^2.6.10",
     "vue-resource": "^1.5.1",
