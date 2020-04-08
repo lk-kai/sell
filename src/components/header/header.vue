@@ -1,18 +1,8 @@
 <template>
   <div class="header">
-    <div
-      @click="showDetail"
-      class="content-wrapper"
-    >
-      <div
-        class="avatar"
-        v-if="seller.avatar"
-      >
-        <img
-          :src="seller.avatar"
-          height="64"
-          width="64"
-        />
+    <div @click="showDetail" class="content-wrapper">
+      <div class="avatar" v-if=" seller&& seller.avatar">
+        <img :src="seller.avatar" height="64" width="64" />
       </div>
       <div class="content">
         <div class="title">
@@ -20,21 +10,12 @@
           <span class="name">{{seller.name}}</span>
         </div>
         <div class="description">{{seller.description}}/{{seller.deliveryTime}}分钟送达</div>
-        <div
-          class="support"
-          v-if="seller.supports"
-        >
-          <span
-            :class="classMap[seller.supports[0].type]"
-            class="icon"
-          ></span>
+        <div class="support" v-if="seller.supports">
+          <span :class="classMap[seller.supports[0].type]" class="icon"></span>
           <span class="text">{{seller.supports[0].description}}</span>
         </div>
       </div>
-      <div
-        class="support-count"
-        v-if="seller.supports"
-      >
+      <div class="support-count" v-if="seller.supports">
         <span class="count">{{seller.supports.length}}个</span>
         <i class="icon-keyboard_arrow_right"></i>
       </div>
@@ -45,30 +26,16 @@
       <i class="icon-keyboard_arrow_right"></i>
     </div>
     <div class="background">
-      <img
-        :src="seller.avatar"
-        alt
-        height="100%"
-        width="100%"
-      />
+      <img :src="seller.avatar" alt height="100%" width="100%" />
     </div>
-    <div
-      class="detail"
-      v-show="detailShow"
-    >
+    <div class="detail" v-show="detailShow">
       <div class="detail-wrapper clearfix">
         <div class="detail-main">
           <h1 class="name">{{seller.name}}</h1>
-          <star
-            :score="2.7"
-            :size="48"
-          ></star>
+          <star :score="2.7" :size="48"></star>
         </div>
       </div>
-      <div
-        @click="closeDetail"
-        class="detail-close"
-      >
+      <div @click="closeDetail" class="detail-close">
         <i class="icon-close"></i>
       </div>
     </div>

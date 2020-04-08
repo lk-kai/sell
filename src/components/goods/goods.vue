@@ -1,7 +1,12 @@
 <template>
   <div class="goods">
     <div class="scroll-nav-wrapper">
-      <cube-scroll-nav :data="goods" :options="scrollOptions" :side="true" v-if="goods.length">
+      <cube-scroll-nav
+        :data="goods"
+        :options="scrollOptions"
+        :side="true"
+        v-if="goods && goods.length"
+      >
         <template slot="bar" slot-scope="props">
           <cube-scroll-nav-bar
             :current="props.current"
