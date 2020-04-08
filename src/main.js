@@ -5,6 +5,7 @@ import router from './router'
 import store from './store'
 import VueResource from 'vue-resource'
 import './common/stylus/index.styl'
+import './register'
 Vue.config.productionTip = false
 Vue.use(VueResource)
 Vue.use(Cube)

@@ -2,7 +2,7 @@
   <div id="app">
     <v-header :seller="seller"></v-header>
     <div class="tab-wrapper">
-      <tab></tab>
+      <tab :seller="seller"></tab>
     </div>
   </div>
 </template>
@@ -10,6 +10,7 @@
 import { getSeller } from './api/index'
 import header from './components/header/header.vue'
 import tab from './components/tab/tab'
+// import axios from 'ts-axios-new'
 // const ERR_OK = 0
 export default {
   data() {
@@ -37,7 +38,7 @@ export default {
     width: 100%
     height: 100%
     .tab-wrapper
-      position: fixed
+      position: absolute
       top: 134px
       left: 0
       bottom: 0

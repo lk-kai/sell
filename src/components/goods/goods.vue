@@ -1,25 +1,19 @@
 <template>
   <div class="goods">
     <div class="scroll-nav-wrapper">
-      <cube-scroll-nav
-        :data="goods"
-        :options="scrollOptions"
-        :side="true"
-        v-if="goods.length"
-      >
-        <template
-          slot="bar"
-          slot-scope="props"
-        >
+      <cube-scroll-nav :data="goods" :options="scrollOptions" :side="true" v-if="goods.length">
+        <template slot="bar" slot-scope="props">
           <cube-scroll-nav-bar
             :current="props.current"
             :labels="props.labels"
-            :txts="goods"
+            :txts="txtBar"
             direction="vertical"
           >
             <template slot-scope="props">
               <div class="text">
+                <supportico v-if="props.txt.type>=1" :size="3" :type="props.txt.type"></supportico>
                 <span>{{props.txt.name}}</span>
+                <span class="num" v-if="props.txt.count">{{props.txt.count}}</span>
               </div>
             </template>
           </cube-scroll-nav-bar>
@@ -33,15 +27,12 @@
           <ul>
             <li
               :key="food.name"
+              @click="selectFood(food)"
               class="food-item"
               v-for="(food) in good.foods"
             >
               <div class="icon">
-                <img
-                  :src="food.icon"
-                  height="57"
-                  width="57"
-                />
+                <img :src="food.icon" height="57" width="57" />
               </div>
               <div class="content">
                 <h2 class="name">{{food.name}}</h2>
@@ -52,13 +43,10 @@
                 </div>
                 <div class="price">
                   <span class="now">￥{{food.price}}</span>
-                  <span
-                    class="old"
-                    v-show="food.oldPrice"
-                  >￥{{food.oldPrice}}</span>
+                  <span class="old" v-show="food.oldPrice">￥{{food.oldPrice}}</span>
                 </div>
                 <div class="cart-control-wrapper">
-                  <cartcontrol :food="food"></cartcontrol>
+                  <cartcontrol :food="food" @cartAdd="cartAdd"></cartcontrol>
                 </div>
               </div>
             </li>
@@ -67,7 +55,7 @@
       </cube-scroll-nav>
     </div>
     <div class="shop-cart-wrapper">
-      <shopcar></shopcar>
+      <shopcar :seller="seller" :goods="goods" ref="shopcar"></shopcar>
     </div>
   </div>
 </template>
@@ -76,19 +64,48 @@
 import { getGoods } from '../../api/index'
 import shopcar from '../shop-car/shop-car'
 import cartcontrol from '../cart-control/cart-control'
+import supportico from '../support-ico/support-ico'
 export default {
+  props: {
+    seller: {
+      type: Object,
+      default() {
+        return {}
+      }
+    }
+  },
   data() {
     return {
       goods: [],
       scrollOptions: {
         click: false,
         directionLockThreshold: 0
-      }
+      },
+      selectedFood: {} // 点击的food
+    }
+  },
+  computed: {
+    txtBar() {
+      let ret = []
+      this.goods.forEach(good => {
+        const { type, name, foods } = good
+        let count = 0
+        foods.forEach(food => {
+          count += food.count || 0
+        })
+        ret.push({
+          name,
+          type,
+          count
+        })
+      })
+      return ret
     }
   },
   components: {
     shopcar,
-    cartcontrol
+    cartcontrol,
+    supportico
   },
   created() {
     this._Getgoods()
@@ -96,9 +113,45 @@ export default {
   methods: {
     _Getgoods() {
       getGoods().then(res => {
-        console.log(res)
         this.goods = res
       })
+    },
+    selectFood(food) {
+      this.selectedFood = food
+      this.foodComp = this.$createFood({
+        $props: {
+          food: 'selectedFood'
+        },
+        $events: {
+          leave: () => {
+            this._hideShopCartList()
+          },
+          add: el => {
+            console.log(el)
+            this.shopCartStickyComp.drop(el)
+          }
+        }
+      })
+      this.foodComp.show()
+      this._showShopCarSticky()
+    },
+    _showShopCarSticky() {
+      this.shopCartStickyComp =
+        this.shopCartStickyComp ||
+        this.$createShopCartSticky({
+          $props: {
+            seller: 'seller',
+            goods: 'goods',
+            fold: true
+          }
+        })
+      this.shopCartStickyComp.show()
+    },
+    _hideShopCartList() {
+      this.shopCartStickyComp.hide()
+    },
+    cartAdd(el) {
+      this.$refs['shopcar'].drop(el)
     }
   }
 }
@@ -135,6 +188,17 @@ export default {
       position: absolute
       right: -8px
       top: -10px
+      display: inline-block
+      padding: 0 5px
+      height: 16px
+      line-height: 16px
+      text-align: center
+      border-radius: 16px
+      font-family: Helvetica
+      font-weight: 700
+      font-size: $fontsize-small-s
+      color: $color-white
+      background: linear-gradient(to right, $color-orange, $color-red)
     .support-ico
       display: inline-block
       vertical-align: top
@@ -202,4 +266,5 @@ export default {
     bottom: 0
     z-index: 50
     width: 100%
-    height: 48px</style>
+    height: 48px
+</style>

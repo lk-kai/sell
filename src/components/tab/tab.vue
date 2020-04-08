@@ -1,11 +1,6 @@
 <template>
   <div class="tab">
-    <cube-tab-bar
-      :data="tabs"
-      :showSlider="true"
-      ref="tabBar"
-      v-model="selectedLabel"
-    ></cube-tab-bar>
+    <cube-tab-bar :data="tabs" :showSlider="true" ref="tabBar" v-model="selectedLabel"></cube-tab-bar>
     <div class="slide-wrapper">
       <cube-slide
         :auto-play="false"
@@ -18,7 +13,7 @@
         ref="slide"
       >
         <cube-slide-item>
-          <goods></goods>
+          <goods :seller="seller"></goods>
         </cube-slide-item>
         <cube-slide-item>
           <ratings></ratings>
@@ -35,6 +30,14 @@ import goods from '../goods/goods'
 import ratings from '../ratings/ratings'
 import seller from '../seller/seller'
 export default {
+  props: {
+    seller: {
+      type: Object,
+      default() {
+        return {}
+      }
+    }
+  },
   data() {
     return {
       index: 0,
@@ -68,7 +71,6 @@ export default {
     },
     onChange(current) {
       this.index = current
-      // console.log(current)
     }
   },
   computed: {

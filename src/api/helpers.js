@@ -1,10 +1,4 @@
 import axios from 'ts-axios-new'
-
-// const urlMap = {
-//   development: '/',
-//   production: ''
-// }
-// const baseUrl = 'http://ustbhuangyi.com/sell/'
 const ERR_OK = 0
 
 export function get(url) {
@@ -13,8 +7,8 @@ export function get(url) {
     return axios.get(url, {
       params
     }).then((res) => {
-      const { code, data } = res.data
-      if (code === ERR_OK) {
+      const { errno, data } = res.data
+      if (errno === ERR_OK) {
         return data
       }
     }).catch((e) => {
