@@ -16,10 +16,10 @@
           <goods :seller="seller"></goods>
         </cube-slide-item>
         <cube-slide-item>
-          <ratings></ratings>
+          <ratings :seller="seller"></ratings>
         </cube-slide-item>
         <cube-slide-item>
-          <seller></seller>
+          <seller :seller="seller"></seller>
         </cube-slide-item>
       </cube-slide>
     </div>
