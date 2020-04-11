@@ -243,8 +243,8 @@ export default {
         border-radius: 12px
         color: #fff
         background: rgb(0, 160, 220)
-        height: 24px
-        line-height: 24px
+        height: 25px
+        line-height: 25px
         font-size: 10px
         &.fade-enter-active, &.fade-leave-active
           transition: all 0.3s
