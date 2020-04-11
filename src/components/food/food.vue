@@ -145,6 +145,9 @@ export default {
       this.foodFlag = true
       this.selectType = ALL
       this.onlyContent = true
+      this.$nextTick(() => {
+        this.$refs['scroll'].refresh()
+      })
     },
     hide() {
       this.foodFlag = false
