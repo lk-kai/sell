@@ -20,7 +20,7 @@
           </div>
           <div class="delivery-wrapper">
             <span class="title">送达时间</span>
-            <span class="delivery-time">{{seller.deliveryTime}}分钟</span>
+            <span class="delivery">{{seller.deliveryTime}}分钟</span>
           </div>
         </div>
       </div>
