@@ -10,7 +10,7 @@ var apiRoutes = express.Router()
 app.use('/api', apiRoutes)
 
 module.exports = {
-  // baseUrl:
+  publicPath: '',
   devServer: {
     // open: true,
     // port: 8080,
@@ -49,6 +49,5 @@ module.exports = {
   chainWebpack(config) {
     config.plugin('context')
       .use(webpack.ContextReplacementPlugin, [/moment[/\\]locale$/, /zh-cn/])
-  },
-  baseUrl: ''
+  }
 }
