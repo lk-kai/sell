@@ -37,7 +37,7 @@
               v-for="(food) in good.foods"
             >
               <div class="icon">
-                <img :src="food.icon" height="57" width="57" />
+                <img v-lazy="food.icon" height="57" width="57" />
               </div>
               <div class="content">
                 <h2 class="name">{{food.name}}</h2>

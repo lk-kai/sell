@@ -53,7 +53,7 @@
           <cube-scroll class="pic-wrapper" :options="picScrollOptions" ref="scroll">
             <ul class="pic-list">
               <li class="pic-item" v-for="(pic, index) in seller.pics" :key="index">
-                <img :src="pic" alt width="120" height="90" />
+                <img v-lazy="pic" alt width="120" height="90" />
               </li>
             </ul>
           </cube-scroll>

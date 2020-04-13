@@ -1,4 +1,5 @@
 const express = require('express')
+const webpack = require('webpack')
 const app = express()
 var appData = require('./data.json')
 var seller = appData.seller
@@ -44,5 +45,9 @@ module.exports = {
       postCompile: true,
       theme: true
     }
+  },
+  chainWebpack(config) {
+    config.plugin('context')
+      .use(webpack.ContextReplacementPlugin, [/moment[/\\]locale$/, /zh-cn/])
   }
 }
