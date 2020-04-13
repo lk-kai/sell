@@ -5,7 +5,7 @@
         <div class="left">
           <h1 class="score">{{seller.score}}</h1>
           <div class="title">综合评分</div>
-          <div class="rank">高于周边商家{{seller.rankRate}}</div>
+          <div class="rank">高于周边商家{{seller.rankRate}}%</div>
         </div>
         <div class="right">
           <div class="score-wrapper">
