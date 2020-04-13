@@ -1,13 +1,13 @@
-const express = require('express')
+// const express = require('express')
 const webpack = require('webpack')
-const app = express()
+// const app = express()
 var appData = require('./data.json')
 var seller = appData.seller
 var goods = appData.goods
 var ratings = appData.ratings
-var apiRoutes = express.Router()
+// var apiRoutes = express.Router()
 
-app.use('/api', apiRoutes)
+// app.use('/api', apiRoutes)
 
 module.exports = {
   publicPath: '',
