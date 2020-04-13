@@ -49,5 +49,6 @@ module.exports = {
   chainWebpack(config) {
     config.plugin('context')
       .use(webpack.ContextReplacementPlugin, [/moment[/\\]locale$/, /zh-cn/])
-  }
+  },
+  baseUrl: ''
 }
