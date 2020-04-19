@@ -12,10 +12,6 @@ var ratings = appData.ratings
 module.exports = {
   publicPath: '',
   devServer: {
-    // 测试
-    // open: true,
-    // port: 8080,
-    // proxy: 'http://ustbhuangyi.com/sell/'
     before: function (app) {
       // 可请求   api/data
       app.get('/api/seller', function (req, res) {
