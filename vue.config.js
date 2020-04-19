@@ -12,6 +12,7 @@ var ratings = appData.ratings
 module.exports = {
   publicPath: '',
   devServer: {
+    // 测试
     // open: true,
     // port: 8080,
     // proxy: 'http://ustbhuangyi.com/sell/'
