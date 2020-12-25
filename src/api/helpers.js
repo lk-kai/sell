@@ -1,8 +1,8 @@
 import axios from 'ts-axios-new'
 const ERR_OK = 0
 const urlMap = {
-  development: '/'
-  // production: 'lk-kai.github.io/sell/'
+  development: '/',
+  production: ''
 }
 const baseUrl = urlMap[process.env.NODE_ENV]
 export function get(url) {
