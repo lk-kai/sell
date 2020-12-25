@@ -8,8 +8,9 @@ var ratings = appData.ratings
 // var apiRoutes = express.Router()
 
 // app.use('/api', apiRoutes)
+
 module.exports = {
-  publicPath: process.env.NODE_ENV === 'production' ? './' : '',
+  publicPath: '/',
   devServer: {
     before: function (app) {
       // 可请求   api/data
